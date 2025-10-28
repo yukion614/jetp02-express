@@ -1,0 +1,48 @@
+{
+  "name": "express-simple-ts",
+  "version": "1.0.0",
+  "description": "Express TypeScript 範例專案",
+  "main": "app.ts",
+  "scripts": {
+    "dev": "npm run build && npm start",
+    "dev:watch": "nodemon --exec \"npm run build && npm start\" --watch app.ts --watch lib/ --ext ts,js,json",
+    "dev:tsx": "tsx app.ts",
+    "dev:clean": "npm run kill-all && sleep 2 && npm run dev",
+    "kill-port": "lsof -ti:3005 | xargs kill -9 2>/dev/null || true",
+    "kill-all": "pkill -f 'tsx app.ts' 2>/dev/null || true && pkill -f 'nodemon' 2>/dev/null || true && lsof -ti:3005 | xargs kill -9 2>/dev/null || true",
+    "build": "tsc",
+    "start": "node dist/app.js",
+    "type-check": "tsc --noEmit",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "typescript",
+    "ecpay",
+    "linepay",
+    "iron-session"
+  ],
+  "author": "Eddy Chang",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "iron-session": "^8.0.4",
+    "line-pay-merchant": "^0.6.0",
+    "mysql2": "^3.15.3",
+    "nodemon": "^3.1.4"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.6",
+    "@types/cookie-parser": "^1.4.10",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.5",
+    "@types/node": "^24.9.1",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "watch": ["app.ts", "lib/"],
+  "ext": "ts,js,json",
+  "ignore": ["node_modules/", "dist/"],
+  "delay": 1000,
+  "signal": "SIGTERM",
+  "killTimeout": 2000,
+  "exec": "npx ts-node --esm app.ts",
+  "restartable": "rs",
+  "env": {
+    "NODE_ENV": "development"
+  }
+}
